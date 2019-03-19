@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 laundry <- read_csv("nhgis0001_csv/nhgis0001_ds97_1970_state.csv") %>% 
   rename(automatic = CUB001, wringer = CUB002, none = CUB003) %>% 
-  mutate(total_homes = sum(automatic, wringer, none))
+  mutate(total_homes = automatic + wringer + none)
 ```
 
 ## R Markdown
